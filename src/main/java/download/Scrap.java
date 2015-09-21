@@ -1,3 +1,5 @@
+package download;
+
 import org.apache.commons.io.FileUtils;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
@@ -6,7 +8,6 @@ import org.jsoup.nodes.Element;
 import java.io.File;
 import java.io.IOException;
 import java.util.List;
-import java.util.stream.IntStream;
 
 /**
  * Created by cvasquez on 17.09.15.
@@ -24,10 +25,10 @@ public class Scrap {
      */
 
     private void download(int min, int max) throws Exception {
-        IntStream
-                .rangeClosed(min, max).boxed()
-                .parallel()
-                .forEach(s -> saveFarmer(s));
+//        IntStream
+//                .rangeClosed(min, max).boxed()
+//                .parallel()
+//                .forEach(s -> saveFarmer(s));
     }
 
     private void saveFarmer(Integer id) {
