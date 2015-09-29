@@ -1,0 +1,174 @@
+6	Actif comme distributeur acheteur de l'agriculteur fournisseur pour l'agriculteur
+13	Repas de pâtes
+9	Liqueur et cidre
+2	Transformation de produits laitiers
+3	Poisson surgelé
+50	Certifié comme agriculteur bio et point de vente
+302	En conversion à l'agriculture bio
+30	Thés et tisanes
+220	Certifié comme point de vente bio
+30	Café et café soluble
+5	Moutarde
+7	Laits végétaux
+534	Aucune information de certification trouvée
+10	Légumes coupés et rapés
+9	Bétail reproducteur
+23	Suppléments diététiques
+25	Produits chocolatiers
+8	Ingrédients fonctionnels
+4	Succédané de café
+5	Fromage de brébis
+79	Actif comme fournisseur pour l'agriculteur
+13	Bouillon
+16	Légumes préparés et en conserve
+302	Actif comme distributeur
+4	Ingrédients pour aliment de bétail
+10	Pain, prêt à cuir
+43	Actif comme distributeur importateur
+4	Autres produits de culture arable
+47	Herbes aromatiques
+8	Poisson
+47	Fruits à pépins frais
+48	Certifié comme agriculteur bio et préparateur bio
+23	Semences
+7	Fruits de mer
+14	Désherbage mechanique
+8	yaourt de lait de chèvre / de brébis
+10	Certifié comme agriculteur bio et préparateur bio et point de vente
+33	Fromage de lait de vache
+8	Conserves de poisson et poisson préparé
+3	Certifié comme préparateur bio et repas préparés certifiés bio
+2	Varech et algues
+3	Aliment pour animaux domestiques
+13	Tofu, tahoe, tempeh, seitan ...
+7	Fleurs
+37	Certifié comme préparateur bio et point de vente
+13	Champignon
+19	Miel
+8	Pousses
+42	Oeufs frais
+14	Spread végétarien
+7	Actif comme acheteur de l'agriculteur contractant
+934	Certifié comme préparateur bio
+16	Légumes surgelés
+2	Certification en dehors de Belgique
+19	Charcuterie fine
+7	Frites et croquettes de pommes de terre
+16	Farine de pain
+23	Actif comme distributeur acheteur de l'agriculteur
+11	Fruits surgelés
+4	Produits diététiques
+6	Actif comme importateur acheteur de l'agriculteur
+10	Chips
+8	Produits d'oeufs
+2	Tapenades
+1	Fruits à noyau frais
+81	Pommes de terre
+1	Produits de nettoyage
+65	Fruits frais
+33	Repas préparés certifiés bio
+11	Actif comme distributeur importateur contractant
+23	Viande
+1163	Certifié comme agriculteur bio
+7	Spreads
+39	Jus de fruits
+26	Fruits préparés et en conserve
+2	Poussins
+9	Margarine
+56	Légumes et fruits
+4	Pommes de terre cuites et en purée
+2	Actif comme distributeur importateur acheteur de l'agriculteur contractant
+35	Bière
+15	Lait de chèvre, lait de brébis
+11	Desserts laitiers
+22	Fourrages concentrés et composés
+5	Salades
+9	Actif comme acheteur de l'agriculteur fournisseur pour l'agriculteur
+16	Engrais organique
+3	Actif comme importateur fournisseur pour l'agriculteur
+11	Actif comme distributeur fournisseur pour l'agriculteur
+7	Machines agricoles
+10	Quiches
+12	Burgers végétariens
+5	Crème glacée de lait de chèvre
+18	Candy
+15	Huiles essentiels
+14	Pâtes
+56	 
+15	Boisson rafraîchissante
+24	Produits laitiers
+27	Pâtisserie
+23	Fruits secs et noix
+30	Volaille
+10	Produits de soin
+13	Protection des plantes
+32	Viande d'agneau, de mouton, de chèvre
+6	Soins de santé
+11	yaourt de lait de vache
+8	Lait de chocolat, boissons laitières
+54	Actif comme acheteur de l'agriculteur
+9	Conserves de viande et viande préparée
+1	Viande de cheval, de cerf
+7	Fumier
+4	Bétail prêt pour l'abbatage
+3	Lait de jument, lait d'ânesse
+29	Viande de porc
+12	Jus de légumes
+5	Aliments pour bébé
+5	Lapin
+39	Lait de vache
+5	Fruits coupés et rapés
+244	Point de vente dispensé de contrôle
+3	Actif comme distributeur acheteur de l'agriculteur contractant
+72	Actif comme contractant
+24	Oeufs
+8	Vinaigre
+13	Actif comme importateur contractant
+16	Sol pour pot/ amélioration de sol
+9	Edulcorants à base de céréales
+7	Germes
+15	Autre farine
+31	Pain frais
+1	Certifié comme agriculteur bio et repas préparés certifiés bio
+5	Viande surgelée
+18	Beurre et crème
+1	Repas surgelés
+17	Confitures
+51	Céréales
+34	Herbes et épices
+16	Fromage de chèvre
+5	Actif comme distributeur importateur acheteur de l'agriculteur
+22	Sauce
+8	Produits chocolatiers semi-manufacturés
+27	Aliment pour le bétail
+62	Petits fruits frais
+22	Herbes
+40	Huiles et graisses végétales
+37	Actif comme distributeur contractant
+8	Repas
+3	Graisses animales
+23	Sucre
+44	Actif comme importateur
+35	Biscuits
+2	Légumineuses
+13	Soupe
+41	Viande de boeuf
+9	Viande de veau
+1	Actif comme distributeur acheteur de l'agriculteur fournisseur pour l'agriculteur contractant
+15	Crème glacée de lait de vache
+8	Pizza
+162	Légumes frais
+1	Certifié comme préparateur bio et point de vente et repas préparés certifiés bio
+1	Produits végétariens surgelés
+103	Certification ne pas applicable
+2	Actif comme distributeur importateur fournisseur pour l'agriculteur
+1	Actif comme acheteur de l'agriculteur fournisseur pour l'agriculteur contractant
+2	Actif comme fournisseur pour l'agriculteur contractant
+5	Desserts de soja
+1	Biogarantie
+3	Pommes de terre coupées / épluchées
+20	Vin
+6	Fourrage grossier
+375	Pas de certificat bio
+12	Muesli, céréales et biscottes
+4	Plantes fourragères

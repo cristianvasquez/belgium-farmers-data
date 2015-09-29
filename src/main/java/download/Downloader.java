@@ -8,11 +8,12 @@ import org.jsoup.nodes.Element;
 import java.io.File;
 import java.io.IOException;
 import java.util.List;
+import java.util.stream.IntStream;
 
 /**
  * Created by cvasquez on 17.09.15.
  */
-public class Scrap {
+public class Downloader {
 
     /***
      * data_nl
@@ -25,10 +26,10 @@ public class Scrap {
      */
 
     private void download(int min, int max) throws Exception {
-//        IntStream
-//                .rangeClosed(min, max).boxed()
-//                .parallel()
-//                .forEach(s -> saveFarmer(s));
+        IntStream
+                .rangeClosed(min, max).boxed()
+                .parallel()
+                .forEach(s -> saveFarmer(s));
     }
 
     private void saveFarmer(Integer id) {
@@ -51,17 +52,39 @@ public class Scrap {
     }
 
     public static void main(String[] args) throws Exception {
-         new Scrap().download(11526, 25300);
+         //new Downloader().addHTML();
         //clean();
     }
 
-    private static void clean() throws Exception{
+    private static void addHTML() throws Exception{
+        File dir = new File("./data_nl");
+        String[] extensions = new String[] { "html"};
+        List<File> files = (List<File>) FileUtils.listFiles(dir, extensions, false);
+        for (File currentFile : files) {
+            String rawData = FileUtils.readFileToString(currentFile);
+            String result =
+            " <!DOCTYPE html>\n" +
+            "<html>\n" +
+            "<head>\n" +
+            "<meta charset=\"UTF-8\">\n" +
+            "<title>Title of the document</title>\n" +
+            "</head>\n" +
+            "\n" +
+            "<body>\n" +
+                    rawData +
+            "\n</body>" +
+            "\n" +
+            "</html>";
+            FileUtils.writeStringToFile(currentFile,result);
+        }
+    }
+    private static void deleteInvalid() throws Exception{
         File dir = new File(".");
         String[] extensions = new String[] { "html"};
         List<File> files = (List<File>) FileUtils.listFiles(dir, extensions, false);
         for (File currentFile : files) {
-            String farmer = FileUtils.readFileToString(currentFile);
-            if (!isValid(farmer)){
+            String rawData = FileUtils.readFileToString(currentFile);
+            if (!isValid(rawData)){
                 currentFile.delete();
             }
         }
