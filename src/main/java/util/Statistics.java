@@ -1,13 +1,14 @@
 package util;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
-
-import java.util.*;
+import java.util.Collection;
+import java.util.DoubleSummaryStatistics;
+import java.util.Map;
 import java.util.function.Function;
 import java.util.stream.Collectors;
 
 import static java.util.stream.Collectors.counting;
 import static java.util.stream.Collectors.groupingBy;
+import static util.Print.print;
 
 /**
  * Created by cvasquez on 29.09.15.
@@ -34,12 +35,4 @@ public class Statistics {
         }
     }
 
-    private static final ObjectMapper mapper = new ObjectMapper();
-    public static void print(Object object) {
-        try {
-            System.out.println(mapper.writerWithDefaultPrettyPrinter().writeValueAsString(object));
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-    }
 }

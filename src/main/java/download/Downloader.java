@@ -39,7 +39,7 @@ public class Downloader {
             String farmer = content.getElementsByIndexEquals(0).html();
             if (isValid(farmer)){
                 final File f = new File(getFileName(id));
-                FileUtils.writeStringToFile(f, farmer, "UTF-8");
+                FileUtils.writeStringToFile(f, addHtmlToRawData(farmer), "UTF-8");
                 System.out.print(".");
             }
         } catch (IOException e) {
@@ -56,28 +56,21 @@ public class Downloader {
         //clean();
     }
 
-    private static void addHTML() throws Exception{
-        File dir = new File("./data_nl");
-        String[] extensions = new String[] { "html"};
-        List<File> files = (List<File>) FileUtils.listFiles(dir, extensions, false);
-        for (File currentFile : files) {
-            String rawData = FileUtils.readFileToString(currentFile);
-            String result =
-            " <!DOCTYPE html>\n" +
-            "<html>\n" +
-            "<head>\n" +
-            "<meta charset=\"UTF-8\">\n" +
-            "<title>Title of the document</title>\n" +
-            "</head>\n" +
-            "\n" +
-            "<body>\n" +
-                    rawData +
-            "\n</body>" +
-            "\n" +
-            "</html>";
-            FileUtils.writeStringToFile(currentFile,result);
-        }
+    private static String addHtmlToRawData(String rawData) {
+        return " <!DOCTYPE html>\n" +
+        "<html>\n" +
+        "<head>\n" +
+        "<meta charset=\"UTF-8\">\n" +
+        "<title>Title of the document</title>\n" +
+        "</head>\n" +
+        "\n" +
+        "<body>\n" +
+                rawData +
+        "\n</body>" +
+        "\n" +
+        "</html>";
     }
+
     private static void deleteInvalid() throws Exception{
         File dir = new File(".");
         String[] extensions = new String[] { "html"};
