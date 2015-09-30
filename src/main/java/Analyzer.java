@@ -1,6 +1,7 @@
 import model.Farmer;
 import org.apache.commons.io.FileUtils;
 import org.jsoup.Jsoup;
+import org.jsoup.helper.StringUtil;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import util.Files;
@@ -8,7 +9,7 @@ import util.Files;
 import java.io.File;
 import java.io.IOException;
 import java.util.*;
-
+import static util.Statistics.*;
 /**
  * Created by cvasquez on 17.09.15.
  */
@@ -18,12 +19,10 @@ public class Analyzer {
         //System.out.println(new  Analyzer().getValues(Files.randomFile_fr()));
 
         Collection results = new  Analyzer().test(Files.allFiles_fr());
+        //print(results);
 
-        for(Object current:results){
-            System.out.println(current);
-        }
-        //Statistics.printStats(results);
-        //Statistics.countAndPrintValues(results, 0);
+        printStats(results);
+        printMoreThan(results, 100);
     }
 
     public List<Object> test(List<File> files) throws Exception {
@@ -31,12 +30,10 @@ public class Analyzer {
         for (File currentFile:files){
             Document doc = Jsoup.parse(FileUtils.readFileToString(currentFile));
             Element body = doc.body();
-            result.add(getFarmer(body));
+            result.addAll(getTexts(body));
         }
         return result;
     }
-
-
 
     /**
      * Farmer extractors
@@ -78,8 +75,15 @@ public class Analyzer {
     }
 
     Set<String> getControlled(Element body){
+        List<String> IGNORABLES = Arrays.asList("","Il est possible que certains détails sur cette page ne sont pas traduits. Nos excuses pour cet inconvéniant");
         Set<String> result = new HashSet<>();
-        addTag(result, body, "li");
+        addTag(result, body, "li",IGNORABLES);
+        return result;
+    }
+
+    Set<String> getTexts(Element body){
+        Set<String> result = new HashSet<>();
+        addTag(result, body, "p");
         return result;
     }
 
@@ -92,10 +96,20 @@ public class Analyzer {
     }
     public static void addTag(Set<String> result, Element element, String tag, List<String> ignorables) {
         for (Element currentElement:element.getElementsByTag(tag)){
-            if (!ignorables.contains(currentElement.text())){
-                result.add(currentElement.text());
+            String text = currentElement.text();
+            if (!toBeIgnored(text, ignorables)){
+                result.add(text);
             }
         }
+    }
+
+    private static boolean toBeIgnored(String text, List<String> ignorables){
+        for(String current:ignorables){
+            if(current.equalsIgnoreCase(text)) {
+                return true;
+            }
+        }
+        return false;
     }
 }
 

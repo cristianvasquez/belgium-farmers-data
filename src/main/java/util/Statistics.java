@@ -1,5 +1,7 @@
 package util;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
+
 import java.util.*;
 import java.util.function.Function;
 import java.util.stream.Collectors;
@@ -17,21 +19,27 @@ public class Statistics {
                 input.stream().collect(groupingBy(Function.identity(), counting()));
         DoubleSummaryStatistics result = collect.values().stream()
                 .collect(Collectors.summarizingDouble((x) -> x));
-        System.out.println(result);
+        print(result);
     }
 
-    public static void countAndPrintValues(Collection<String> input,long moreThan) {
+    public static void printMoreThan(Collection<String> input,long moreThan) {
 //        Map<String, Long> counted = input.stream()
 //                .collect(Collectors.groupingBy(o -> o, Collectors.counting()));
         Map<String, Long> collect =
                 input.stream().collect(groupingBy(Function.identity(), counting()));
-
         for(String current:collect.keySet()){
             if (collect.get(current)>moreThan){
-                System.out.println(collect.get(current) + "\t" + current);
+                print(collect.get(current) + " " + current);
             }
         }
-
     }
 
+    private static final ObjectMapper mapper = new ObjectMapper();
+    public static void print(Object object) {
+        try {
+            System.out.println(mapper.writerWithDefaultPrettyPrinter().writeValueAsString(object));
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
 }
