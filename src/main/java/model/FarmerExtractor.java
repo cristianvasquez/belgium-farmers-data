@@ -18,10 +18,36 @@ public class FarmerExtractor {
     /**
      * Farmer extractors
      */
+
+    public static List<Map> getGeoJSON(List<File> files) throws IOException {
+        List<Map> result = new ArrayList<>();
+        for (File currentFile:files){
+            result.add(getGeoJSON(currentFile));
+        }
+        return result;
+    }
+    public static Map getGeoJSON(File currentFile) throws IOException {
+        Document doc = Jsoup.parse(FileUtils.readFileToString(currentFile));
+        Element body = doc.body();
+        Map<String,Object> result = new HashMap<>();
+        Farmer farmer = getFarmer(body);
+        result.put("id",getId(currentFile));
+        result.put("loc",Arrays.asList(farmer.getLatitude(), farmer.getLongitude()));
+        result.put("address",farmer.getAddress());
+        result.put("title",farmer.getName());
+        result.put("keys",getControlled(body));
+        result.put("links", getLinks(body));
+        result.put("emails", getEmails(body));
+        //result.put("paragraphs", getParagraphs(body));
+        //result.put("all", getPlainText(body));
+        return result;
+    }
+
     public static Map getAll(File currentFile) throws IOException {
         Document doc = Jsoup.parse(FileUtils.readFileToString(currentFile));
         Element body = doc.body();
         Map<String,Object> result = new HashMap<>();
+        result.put("id",getId(currentFile));
         result.put("title",getTitle(body));
         result.put("farmer",getFarmer(body));
         result.put("keys",getControlled(body));
@@ -29,6 +55,17 @@ public class FarmerExtractor {
         result.put("emails", getEmails(body));
         result.put("paragraphs", getParagraphs(body));
         result.put("all", getPlainText(body));
+        return result;
+    }
+
+    /**
+     * Properties
+     */
+
+    public static String getId(File file){
+        String result = file.getName();
+        result=result.replaceAll("bioforumvlaanderen_","");
+        result=result.replaceAll(".html","");
         return result;
     }
 
