@@ -32,7 +32,10 @@ public class FarmerExtractor {
         Map<String,Object> result = new HashMap<>();
         Farmer farmer = getFarmer(body);
         result.put("id",getId(currentFile));
-        result.put("loc",Arrays.asList(farmer.getLatitude(), farmer.getLongitude()));
+        result.put("loc",Arrays.asList(
+                Double.parseDouble(farmer.getLatitude()),
+                Double.parseDouble(farmer.getLongitude())
+        ));
         result.put("address",farmer.getAddress());
         result.put("title",farmer.getName());
         result.put("keys",getControlled(body));
