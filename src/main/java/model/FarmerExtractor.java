@@ -1,6 +1,10 @@
 package model;
 
 import org.apache.commons.io.FileUtils;
+import org.apache.jena.datatypes.RDFDatatype;
+import org.apache.jena.datatypes.xsd.XSDDatatype;
+import org.apache.jena.rdf.model.*;
+import org.apache.jena.sparql.vocabulary.FOAF;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
@@ -19,6 +23,70 @@ public class FarmerExtractor {
      * Farmer extractors
      */
 
+    private static Literal l ( String lexicalform, RDFDatatype datatype ) {
+        return ResourceFactory.createTypedLiteral ( lexicalform, datatype );
+    }
+
+
+    private static Literal l ( String lexicalform ) {
+        return ResourceFactory.createTypedLiteral(lexicalform);
+    }
+
+    private static Literal lang ( String lexicalform, String lang ) {
+        return ResourceFactory.createLangLiteral(lexicalform, lang );
+    }
+
+    public static Model getRdf(List<File> files, String lang) throws IOException {
+
+        String uriref = "http://openthings.org/organization";
+        Property address = ResourceFactory.createProperty("http://openthings.org/address");
+        Property name = ResourceFactory.createProperty("http://openthings.org/name");
+        Property tag = ResourceFactory.createProperty("http://openthings.org/tag");
+        Property link = ResourceFactory.createProperty("http://openthings.org/link");
+        Resource organization = ResourceFactory.createResource(uriref);
+
+        Property latitude = ResourceFactory.createProperty("http://schema.org/latitude");
+        Property longitude = ResourceFactory.createProperty("http://schema.org/longitude");
+
+        Model model = ModelFactory.createDefaultModel();
+
+
+        for (File currentFile:files){
+            Document doc = Jsoup.parse(FileUtils.readFileToString(currentFile));
+            Element body = doc.body();
+            Farmer farmer = getFarmer(body);
+
+            String id = getId(currentFile);
+            Resource currentResource = model.createResource(uriref+"/"+id, organization);
+
+            if (farmer.getLatitude()!=null){
+                model.add(currentResource, latitude, l(farmer.getLatitude(), XSDDatatype.XSDfloat));
+            }
+            if (farmer.getLongitude()!=null){
+                model.add(currentResource, longitude, l(farmer.getLongitude(), XSDDatatype.XSDfloat));
+            }
+            if (farmer.getAddress()!=null){
+                model.add(currentResource, address, l(farmer.getAddress()));
+            }
+            if (farmer.getName()!=null){
+                model.add(currentResource, name, lang(farmer.getName(),lang));
+            }
+            for (String current: getEmails(body)){
+                model.add(currentResource, FOAF.mbox, ResourceFactory.createResource("mailto:"+current));
+            }
+            for (String current: getControlled(body)){
+                model.add(currentResource, tag, lang(current,lang));
+            }
+            for (String current: getLinks(body)) {
+                model.add(currentResource, link, ResourceFactory.createResource(current));
+            }
+
+            //result.put("paragraphs", getParagraphs(body));
+            //result.put("all", getPlainText(body));
+        }
+
+        return model;
+    }
     public static List<Map> getGeoJSON(List<File> files) throws IOException {
         List<Map> result = new ArrayList<>();
         for (File currentFile:files){

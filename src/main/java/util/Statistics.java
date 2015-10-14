@@ -8,7 +8,7 @@ import java.util.stream.Collectors;
 
 import static java.util.stream.Collectors.counting;
 import static java.util.stream.Collectors.groupingBy;
-import static util.Print.print;
+import static util.Out.print;
 
 /**
  * Created by cvasquez on 29.09.15.

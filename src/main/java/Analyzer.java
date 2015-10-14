@@ -11,7 +11,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
 
-import static util.Print.print;
+import static util.Out.print;
 /**
  * Created by cvasquez on 17.09.15.
  */
