@@ -33,7 +33,7 @@ public class FarmerExtractor {
     }
 
     private static Literal lang ( String lexicalform, String lang ) {
-        return ResourceFactory.createLangLiteral(lexicalform, lang );
+        return ResourceFactory.createLangLiteral(lexicalform, lang);
     }
 
     public static Model getRdf(List<File> files, String lang) throws IOException {
@@ -186,7 +186,9 @@ public class FarmerExtractor {
         for (Element link:body.select("a[href]")){
             String text = link.attr("abs:href");
             if (!toBeIgnored(text, ignorables)){
-                result.add(text);
+                for(String current:text.split("; ")){
+                    result.add(current);
+                }
             }
         }
         return result;
