@@ -1,0 +1,174 @@
+13	Soep
+8	Vis
+13	Pastagerechten
+11	Actief als distributeur importeur loondienst
+12	Muesli, ontbijtgranen en beschuit
+47	Pitfruit vers
+1	Reinigingsproducten
+22	Kracht- en mengvoeder
+62	Kleinfruit vers
+14	Vegetarisch broodbeleg
+1	Actief als afnemer van boer leverancier aan boer loondienst
+9	Zoetmiddelen obv granen
+7	Dierlijke mest
+10	Verzorgingsproducten
+40	Rundsvlees
+12	Groentesap
+4	Andere akkerbouwproducten
+4	Puree & gekookte aardappelen
+4	Veevoeringrediënten
+4	Surrogaatkoffie
+3	Dierlijke vetten
+47	Aromatische kruiden
+40	Plantaardige oliën en vetten
+9	Kalfsvlees
+13	Bouillon
+15	Roomijs koe
+7	Landbouwmachines
+2	Kuikens
+4	Voedergewassen
+23	Gedroogd fruit en noten
+26	Fruitconserven en -bereidingen
+16	Diepgevroren groenten
+9	Vleesconserven en -bereidingen
+7	Smeerpasta’s
+8	Yoghurt geit / schaap
+14	Deegwaren
+5	Actief als distributeur importeur afnemer van boer
+7	Kiemen
+3	Aardappelen geschild/gesneden
+13	Tofu, tahoe, tempeh, seitan ...
+7	Frieten, kroketten
+11	Actief als distributeur leverancier aan boer
+23	Zaden
+11	Diepgevroren fruit
+9	Likeur & cider
+23	Actief als distributeur afnemer van boer
+16	Kaas geit
+35	Bier
+22	Sauzen
+22	Kruiden
+2	Actief als leverancier aan boer loondienst
+2	Zeewier en algen
+2	Certificatie buiten België.
+24	Zuivel
+27	Gebak
+30	Koffie en oploskoffie
+30	Gevogelte
+79	Actief als leverancier aan boer
+15	Frisdrank
+5	Sojadesserts
+39	Koemelk
+2	Tapenades
+8	Chocolademelk, melkdranken
+7	Actief als afnemer van boer loondienst
+32	Lams-, schapen-, geitenvlees
+42	Verse eieren
+15	Ander meel
+24	Eieren
+11	Yoghurt koe
+6	Actief als distributeur afnemer van boer leverancier aan boer
+375	Geen certificaat voor bio
+16	Potgrond / bodemverbeteraar
+3	Actief als importeur leverancier aan boer
+9	Fokvee
+81	Aardappelen
+19	Honing
+13	Paddenstoelen
+18	Snoepgoed
+3	Huisdierenvoer
+23	Suikers
+25	Chocoladeproducten
+8	Eiproducten
+7	Zeevruchten
+5	Salades
+9	Margarines
+5	Konijn
+65	Vers fruit
+302	Actief als distributeur
+16	Broodmeel
+2	Actief als distributeur importeur afnemer van boer loondienst
+8	Maaltijden
+33	Kaas koe
+12	Vegetarische burgers
+1	Steenfruit vers
+1163	Gecertificeerd als bioboer
+47	Gecertificeerd als bioboer en bioverwerker
+2	Actief als distributeur importeur leverancier aan boer
+3	Paarden-, ezelinnenmelk
+4	Dieetvoeding
+5	Roomijs geit
+3	Diepvriesvis
+20	Wijn
+56	 
+28	Varkensvlees
+2	Peulvruchten
+5	Kaas schaap
+5	Babyvoeding
+13	Actief als importeur loondienst
+37	Actief als distributeur loondienst
+1	Gecertificeerd als bioboer en bereide gerechten met biocertificaat
+8	Visconserven en -bereidingen
+56	Groente en fruit
+9	Actief als afnemer van boer leverancier aan boer
+245	Winkel vrijgesteld van controle
+10	Gecertificeerd als bioboer en bioverwerker en verkooppunt
+10	Chips, borrelhapjes
+54	Actief als afnemer van boer
+6	Gezondheidszorg
+35	Koekjes
+5	Diepgevroren vlees
+7	Plantgoed
+33	Bereide gerechten met biocertificaat
+50	Gecertificeerd als bioboer en verkooppunt
+302	In omschakeling naar bio
+8	Azijn
+14	Mechanische onkruidbestrijding
+2	Diepvries
+5	Versneden en geraspt fruit
+8	Functionele voedingsingrediënten
+51	Granen
+220	Gecertificeerd verkooppunt
+16	Organische meststof
+4	Slachtrijp vee
+534	Geen certificatie informatie gevonden
+162	Verse groenten
+8	Chocolade halffabricaten
+2	Zuivelverwerking
+15	Geiten-, schapenmelk
+39	Fruitsap
+23	Vlees
+1	Paarden-, hertenvlees
+10	Quiches / hartige taarten
+19	Fijne vleeswaren
+17	Confituren
+30	Thee en kruidenthee
+34	Kruiden/specerijen
+6	Ruwvoeder / stro
+5	Mosterd
+15	Etherische oliën
+37	Gecertificeerd als bioverwerker en verkooppunt
+7	Bloemen
+1	Pootgoed
+3	Gecertificeerd als bioverwerker en bereide gerechten met biocertificaat
+10	Afbakbrood / diepvriesbrood
+13	Gewasbescherming
+10	Versneden en geraspte groenten
+16	Groenteconserven en -bereidingen
+1	Gecertificeerd als bioverwerker en verkooppunt en bereide gerechten met biocertificaat
+27	Veevoeder
+1	Actief als distributeur afnemer van boer leverancier aan boer loondienst
+18	Boter en room
+8	Pizza
+6	Actief als importeur afnemer van boer
+31	Vers brood
+1	Biogarantie
+124	Certificatie niet van toepassing
+3	Actief als distributeur afnemer van boer loondienst
+44	Actief als importeur
+11	Zuiveldesserts
+23	Voedingssupplementen
+43	Actief als distributeur importeur
+72	Actief als loondienst
+7	Plantaardige melkdranken
+934	Gecertificeerd als bioverwerker

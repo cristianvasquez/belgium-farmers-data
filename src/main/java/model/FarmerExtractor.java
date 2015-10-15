@@ -19,6 +19,16 @@ import java.util.regex.Matcher;
  */
 public class FarmerExtractor {
 
+    public static final String ID = "id";
+    public static final String LATITUDE = "latitude";
+    public static final String LONGITUDE = "longitude";
+    public static final String ADDRESS = "address";
+    public static final String NAME = "name";
+    public static final String TAGS = "tags";
+    public static final String LINKS = "links";
+    public static final String EMAILS = "emails";
+    public static final String COMPLETE_TEXT = "completeText";
+
     /**
      * Farmer extractors
      */
@@ -44,12 +54,9 @@ public class FarmerExtractor {
         Property tag = ResourceFactory.createProperty("http://openthings.org/tag");
         Property link = ResourceFactory.createProperty("http://openthings.org/link");
         Resource organization = ResourceFactory.createResource(uriref);
-
         Property latitude = ResourceFactory.createProperty("http://schema.org/latitude");
         Property longitude = ResourceFactory.createProperty("http://schema.org/longitude");
-
         Model model = ModelFactory.createDefaultModel();
-
 
         for (File currentFile:files){
             Document doc = Jsoup.parse(FileUtils.readFileToString(currentFile));
@@ -87,45 +94,28 @@ public class FarmerExtractor {
 
         return model;
     }
-    public static List<Map> getGeoJSON(List<File> files) throws IOException {
+    public static List<Map> getAll(List<File> files) throws IOException {
         List<Map> result = new ArrayList<>();
         for (File currentFile:files){
-            result.add(getGeoJSON(currentFile));
+            result.add(getAll(currentFile));
         }
         return result;
     }
-    public static Map getGeoJSON(File currentFile) throws IOException {
-        Document doc = Jsoup.parse(FileUtils.readFileToString(currentFile));
-        Element body = doc.body();
-        Map<String,Object> result = new HashMap<>();
-        Farmer farmer = getFarmer(body);
-        result.put("id",getId(currentFile));
-        result.put("loc",Arrays.asList(
-                Double.parseDouble(farmer.getLatitude()),
-                Double.parseDouble(farmer.getLongitude())
-        ));
-        result.put("address",farmer.getAddress());
-        result.put("title",farmer.getName());
-        result.put("keys",getControlled(body));
-        result.put("links", getLinks(body));
-        result.put("emails", getEmails(body));
-        //result.put("paragraphs", getParagraphs(body));
-        //result.put("all", getPlainText(body));
-        return result;
-    }
-
     public static Map getAll(File currentFile) throws IOException {
         Document doc = Jsoup.parse(FileUtils.readFileToString(currentFile));
         Element body = doc.body();
         Map<String,Object> result = new HashMap<>();
-        result.put("id",getId(currentFile));
-        result.put("title",getTitle(body));
-        result.put("farmer",getFarmer(body));
-        result.put("keys",getControlled(body));
-        result.put("links", getLinks(body));
-        result.put("emails", getEmails(body));
-        result.put("paragraphs", getParagraphs(body));
-        result.put("all", getPlainText(body));
+        Farmer farmer = getFarmer(body);
+        result.put(ID,getId(currentFile));
+        result.put(LATITUDE,Double.parseDouble(farmer.getLatitude()));
+        result.put(LONGITUDE,Double.parseDouble(farmer.getLongitude()));
+        result.put(ADDRESS, farmer.getAddress());
+        result.put(NAME,farmer.getName());
+        result.put(TAGS,getControlled(body));
+        result.put(LINKS, getLinks(body));
+        result.put(EMAILS, getEmails(body));
+        //result.put("paragraphs", getParagraphs(body));
+        result.put(COMPLETE_TEXT, getPlainText(body));
         return result;
     }
 
@@ -186,7 +176,11 @@ public class FarmerExtractor {
         for (Element link:body.select("a[href]")){
             String text = link.attr("abs:href");
             if (!toBeIgnored(text, ignorables)){
-                for(String current:text.split("; ")){
+                for(String current:text.split(";|-")){
+                    current=current.replaceAll(" ","");
+                    if (!current.startsWith("http")){
+                        current = "http://"+current;
+                    }
                     result.add(current);
                 }
             }

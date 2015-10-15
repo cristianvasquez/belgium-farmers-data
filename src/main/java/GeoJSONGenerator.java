@@ -8,9 +8,9 @@ import util.Out;
 public class GeoJSONGenerator {
 
     public static void main(String[] args) throws Exception {
-        //print(FarmerExtractor.getGeoJSON(Files.allFiles_fr()));
-        //write(FarmerExtractor.getGeoJSON(Files.allFiles_fr()),"farmers.json");
-        Out.write(FarmerExtractor.getGeoJSON(Files.someFiles_fr(200)), "farmers_min.json");
+        //print(FarmerExtractor.getAll(Files.allFiles_fr()));
+        //write(FarmerExtractor.getAll(Files.allFiles_fr()),"farmers.json");
+        Out.write(FarmerExtractor.getAll(Files.someFiles_fr(200)), "farmers_min.json");
 
     }
 }
