@@ -1,4 +1,4 @@
-import model.FarmerPatterns;
+import farmers.model.FarmerPatterns;
 import org.junit.Assert;
 import org.junit.Test;
 

@@ -1,4 +1,4 @@
-package model;
+package farmers.model;
 
 import org.apache.commons.io.FileUtils;
 import org.apache.jena.datatypes.RDFDatatype;

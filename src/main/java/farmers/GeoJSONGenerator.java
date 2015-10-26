@@ -1,4 +1,6 @@
-import model.FarmerExtractor;
+package farmers;
+
+import farmers.model.FarmerExtractor;
 import util.Files;
 import util.Out;
 

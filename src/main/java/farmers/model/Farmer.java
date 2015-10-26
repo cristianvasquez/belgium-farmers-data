@@ -1,4 +1,4 @@
-package model;
+package farmers.model;
 
 /**
  * Created by cvasquez on 20.09.15.

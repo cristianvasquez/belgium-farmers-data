@@ -1,4 +1,6 @@
-import model.FarmerExtractor;
+package farmers;
+
+import farmers.model.FarmerExtractor;
 import org.apache.poi.hssf.usermodel.HSSFWorkbook;
 import org.apache.poi.ss.usermodel.*;
 import util.Files;

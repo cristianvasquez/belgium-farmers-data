@@ -1,4 +1,4 @@
-model.Farmer data
+farmers.model.Farmer data
 
 Contents of: data_nl.tar.gz
 

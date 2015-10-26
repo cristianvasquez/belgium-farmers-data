@@ -1,7 +1,6 @@
 package util;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import model.FarmerExtractor;
 import org.apache.commons.io.FileUtils;
 import org.apache.jena.rdf.model.Model;
 

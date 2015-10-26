@@ -1,4 +1,4 @@
-package download;
+package farmers.download;
 
 import org.apache.commons.io.FileUtils;
 import org.jsoup.Jsoup;

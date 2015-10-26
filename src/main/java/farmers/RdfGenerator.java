@@ -1,4 +1,6 @@
-import model.FarmerExtractor;
+package farmers;
+
+import farmers.model.FarmerExtractor;
 import org.apache.jena.rdf.model.Model;
 import util.Files;
 import util.Out;
@@ -16,7 +18,7 @@ public class RdfGenerator {
         Model model = FarmerExtractor.getRdf(Files.someFiles_fr(200),"fr");
         Out.write(model,"farmers_min.ttl");
 
-//        Model model = FarmerExtractor.getRdf(Files.allFiles_fr(),"fr");
-//        Out.write(model,"farmers.ttl");
+//        Model farmers.model = FarmerExtractor.getRdf(Files.allFiles_fr(),"fr");
+//        Out.write(farmers.model,"farmers.ttl");
     }
 }
